@@ -1,0 +1,78 @@
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 520px;
+}
+
+.carousel-mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 520px;
+    box-shadow: inset 0 0 32px 16px rgba(0, 0, 0, 0.35);
+}
+
+.carousel-item {
+    width: 100%;
+    height: 520px;
+}
+
+.carousel-item img {
+    display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 80px;
+    left: 20%;
+    border-radius: 4px;
+    line-height: 64px;
+    padding: 24px 30px;
+    background: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    border: 1px solid #FFFFFF;
+}
+
+.caption-title {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-bottom: 12px;
+}
+
+.caption-slogan {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 14px;
+}
+
+.caption-note {
+    line-height: 15px;
+    padding-top: 14px;
+    border-top: 1px solid #303133;
+}
+
+.form-inline .form-control {
+    height: 48px;
+    line-height: 48px;
+    padding: 0 48px;
+}
+
+.form-inline .form-label, .form-inline .form-action {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+}
+
+.form-inline .form-label .icon {
+    font-size: 20px;
+}
+
+.btn-super {
+    height: 48px;
+    margin-top: 8px;
+    font-size: 17px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Nemo - 专属漫画分享平台</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../css/nemo.css"/>
+    <link rel="stylesheet" href="../css/user-login.css"/>
+</head>
+<body>
+<header class="header">
+    <div class="header-fixed">
+        <div class="container">
+            <h1 class="app-name"><a href="nemo-index.html">Nemo</a></h1>
+            <section class="header-action">
+                <a href="user-login.html">
+                    <button class="btn btn-petite btn-default login-action">登录</button>
+                </a>
+                <a href="user-register.html">
+                    <button class="btn btn-petite btn-primary">注册</button>
+                </a>
+            </section>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="title">
+        <p class="title-text">您好，我是Nemo!</p>
+        <p class="title-note">您的专属漫画分享平台</p>
+    </section>
+    <section class="container">
+        <form class="form-inline">
+            <div class="form-group">
+                <label class="form-action"><span class="icon icon-remove-sign"></span></label>
+                <input class="form-control" type="text" placeholder="您的真实姓名"/>
+                <label class="form-label"><span class="icon icon-user"></span></label>
+            </div>
+            <div class="form-group">
+                <label class="form-action"><span class="icon icon-remove-sign"></span></label>
+                <input class="form-control" type="text" placeholder="中国大陆手机号"/>
+                <label class="form-label"><span class="icon icon-phone"></span></label>
+            </div>
+            <div class="form-group">
+                <label class="form-action"><span class="icon icon-eye-open"></span></label>
+                <input class="form-control" type="password" placeholder="密码，6-32个字符"/>
+                <label class="form-label"><span class="icon icon-lock"></span></label>
+            </div>
+            <div class="form-group sms-group">
+                <label class="form-action">
+                    <button class="btn btn-primary" type="button">发送验证码</button>
+                </label>
+                <input class="form-control" type="text" placeholder="短信验证码"/>
+                <label class="form-label"><span class="icon icon-th"></span></label>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-super btn-primary" type="button">注册</button>
+            </div>
+        </form>
+    </section>
+</main>
+<footer class="footer">
+    <span>ALL RIGHTS RESERVED FOR RUMOFUTURE</span>
+</footer>
+</body>
+</html>

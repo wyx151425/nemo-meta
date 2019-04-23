@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Nemo - 专属漫画分享平台</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../css/nemo.css"/>
+    <link rel="stylesheet" href="../css/nemo-index.css"/>
+    <link rel="stylesheet" href="../css/book.css"/>
+</head>
+<body>
+<header class="header">
+    <div class="header-fixed" style="display: none">
+        <div class="container">
+            <h1 class="app-name"><a href="nemo-index.html">Nemo</a></h1>
+            <section class="header-action">
+                <button class="btn btn-petite btn-default login-action">登录</button>
+                <a href="user-register.html">
+                    <button class="btn btn-petite btn-primary">注册</button>
+                </a>
+            </section>
+        </div>
+    </div>
+    <div class="header-fixed">
+        <div class="container">
+            <h1 class="app-name"><a href="nemo-index.html">Nemo</a></h1>
+            <section class="account">
+                <div class="account-info">
+                    <img class="account-avatar" src="../images/default.png" alt=""/>
+                    <span class="account-name">王振琦</span>
+                    <span class="icon icon-menu-down"></span>
+                </div>
+                <nav class="account-nav">
+                    <a class="account-item" href=""><span class="icon icon-user"></span>我的漫画</a>
+                    <a class="account-item" href=""><span class="icon icon-cog"></span>我的信息</a>
+                    <p class="account-item account-logout"><span class="icon icon-off"></span>退出登录</p>
+                </nav>
+            </section>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="carousel">
+        <div class="carousel-item">
+            <img src="../images/theme.jpg" alt=""/>
+            <section class="carousel-caption">
+                <p class="caption-title">Nemo</p>
+                <p class="caption-slogan">您的专属漫画分享平台</p>
+                <p class="caption-note">见证非凡&nbsp;&nbsp;至臻之作</p>
+            </section>
+        </div>
+        <div class="carousel-mask"></div>
+    </section>
+    <section class="container">
+        <div class="title">
+            <p class="title-text">推荐漫画</p>
+            <p class="title-note"><a href="nemo-books.html">点击此处</a>查看更多漫画</p>
+        </div>
+        <div class="book">
+            <img class="book-cover" src="../images/theme.jpg" alt=""/>
+            <section class="book-info">
+                <p class="book-name">漫十年</p>
+                <p class="book-style"><span class="icon icon-bookmark"></span>清新</p>
+                <p class="book-desc">五月初 屹立在温暖的阳光下 心情也变得柔和起来 那些你曾期待的 却放弃你的 那些你不在意的 你已放弃的 都成了自己辛辛苦苦的独角戏 在新的生活到来之前 在煎熬中最后翻阅那些过往 一番不舍与惋惜之后 才发觉一切是那么的不值得 原来实现愿望是这么的难 我用了这么久才能去忘记你 五月初 屹立在温暖的阳光下 心情也变得柔和起来 那些你曾期待的 却放弃你的 那些你不在意的 你已放弃的 都成了自己辛辛苦苦的独角戏 在新的生活到来之前 在煎熬中最后翻阅那些过往 一番不舍与惋惜之后 才发觉一切是那么的不值得 原来实现愿望是这么的难 我用了这么久才能去忘记你</p>
+                <a href="author-book.html">
+                    <button class="btn btn-primary" type="button"><span class="icon icon-link"></span>浏览</button>
+                </a>
+            </section>
+        </div>
+        <div class="book">
+            <img class="book-cover" src="../images/theme.jpg" alt=""/>
+            <section class="book-info">
+                <p class="book-name">漫十年</p>
+                <p class="book-style"><span class="icon icon-bookmark"></span>清新</p>
+                <p class="book-desc">五月初 屹立在温暖的阳光下 心情也变得柔和起来 那些你曾期待的 却放弃你的 那些你不在意的 你已放弃的 都成了自己辛辛苦苦的独角戏 在新的生活到来之前 在煎熬中最后翻阅那些过往 一番不舍与惋惜之后 才发觉一切是那么的不值得 原来实现愿望是这么的难 我用了这么久才能去忘记你 五月初 屹立在温暖的阳光下 心情也变得柔和起来 那些你曾期待的 却放弃你的 那些你不在意的 你已放弃的 都成了自己辛辛苦苦的独角戏 在新的生活到来之前 在煎熬中最后翻阅那些过往 一番不舍与惋惜之后 才发觉一切是那么的不值得 原来实现愿望是这么的难 我用了这么久才能去忘记你</p>
+                <a href="author-book.html">
+                    <button class="btn btn-primary" type="button"><span class="icon icon-link"></span>浏览</button>
+                </a>
+            </section>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <span>ALL RIGHTS RESERVED FOR RUMOFUTURE</span>
+</footer>
+<div class="modal">
+    <dialog class="modal-dialog">
+        <header class="modal-header">
+            <h1 class="modal-title">欢迎登录Nemo</h1>
+            <div class="modal-dismiss">
+                <span class="icon icon-remove"></span>
+            </div>
+        </header>
+        <main class="modal-content">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label class="form-action"><span class="icon icon-remove-sign"></span></label>
+                    <input class="form-control" type="text" placeholder="中国大陆手机号"/>
+                    <label class="form-label"><span class="icon icon-phone"></span></label>
+                </div>
+                <div class="form-group">
+                    <label class="form-action"><span class="icon icon-eye-open"></span></label>
+                    <input class="form-control" type="password" placeholder="密码，6-32个字符"/>
+                    <label class="form-label"><span class="icon icon-lock"></span></label>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-super btn-primary" type="button">登录</button>
+                </div>
+            </form>
+        </main>
+    </dialog>
+</div>
+</body>
+</html>

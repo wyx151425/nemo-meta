@@ -1,0 +1,118 @@
+.master {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 40px;
+}
+
+.master-img {
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.master-info {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.master-info .container {
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.master-title {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.master-group {
+    display: flex;
+    width: 445px;
+    height: 45px;
+}
+
+.master-control {
+    width: 400px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 12px;
+    font-size: 15px;
+    box-sizing: border-box;
+    border: 1px solid #DCDFE6;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.master-action {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    cursor: pointer;
+    color: #909399;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #DCDFE6;
+    background-color: #DCDFE6;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.master-action:hover {
+    color: #67C23A;
+}
+
+.master-action:active {
+    color: #5DAF34;
+}
+
+.master-option {
+    width: 100%;
+    height: 80px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.master-option .container {
+    height: 80px;
+}
+
+.master-list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    font-size: 17px;
+    font-weight: 700;
+    list-style: none;
+}
+
+.master-item {
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 54px;
+    box-sizing: border-box;
+}
+
+.master-item:hover {
+    color: #67C23A;
+}
+
+.master-item:active {
+    color: #5DAF34;
+}
+
+.master-list .active {
+    color: #67C23A;
+    border-bottom: 3px solid #67C23A;
+}

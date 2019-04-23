@@ -1,0 +1,65 @@
+.title {
+    margin-top: 54px;
+    margin-bottom: 32px;
+}
+
+.title-text {
+    color: #000000;
+    font-size: 32px;
+    line-height: 42px;
+    margin-bottom: 4px;
+}
+
+.title-note {
+    color: #303133;
+    font-size: 17px;
+}
+
+main .container {
+    width: 450px;
+}
+
+.form-inline {
+    width: 450px;
+    padding: 30px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-inline .form-control {
+    height: 54px;
+    line-height: 54px;
+    padding: 0 54px;
+}
+
+.form-inline .form-label, .form-inline .form-action {
+    width: 54px;
+    height: 54px;
+    line-height: 54px;
+}
+
+.form-inline .form-label .icon {
+    font-size: 20px;
+}
+
+.sms-group .form-control {
+    padding-right: 120px;
+}
+
+.sms-group .form-action {
+    width: 120px;
+}
+
+.sms-group .btn {
+    display: block;
+    height: 32px;
+    margin: 11px 12px;
+}
+
+.btn-super {
+    height: 54px;
+    margin-top: 8px;
+    font-size: 17px;
+}

@@ -1,0 +1,597 @@
+@charset "utf-8";
+
+/* 全局CSS */
+html {
+    max-width: 100%;
+    min-width: 1200px;
+    height: 100%;
+    background: #f5f5f5 url(../images/rebc.gif);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body, dialog {
+    color: #303133;
+    font-size: 15px;
+    font-family: "Microsoft Yahei", "微软雅黑", "Hiragino Sans GB", "WenQuanYi Micro Hei", "宋体", "sans-serif";
+}
+
+body, header, footer, main, dialog, section,
+h1, h2, h3, h4, h5, h6, p, ol, ul, li,
+button, input, select, textarea {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+header, footer, main, dialog, section {
+    display: block;
+}
+
+a:link, a:hover, a:active, a:visited {
+    text-decoration-line: none;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+/* Header部分CSS */
+.header {
+    width: 100%;
+    height: 64px;
+}
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 64px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.header .container {
+    display: flex;
+    height: 64px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-name {
+    height: 64px;
+    line-height: 64px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.app-name a {
+    color: #000;
+}
+
+button.login-action, button.login-action:hover, button.login-action:active {
+    border: none;
+    margin-right: 12px;
+}
+
+.account {
+    position: relative;
+    cursor: pointer;
+}
+
+.account-info {
+    height: 64px;
+    line-height: 64px;
+}
+
+.account-info .icon-menu-down {
+    top: 1px;
+    font-size: 13px;
+}
+
+.account-avatar {
+    display: block;
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin: 11px 4px 11px 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.account-name {
+    margin: 0 8px;
+}
+
+.account-nav {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 140px;
+    text-align: center;
+    border-radius: 1px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.account-nav .icon {
+    top: 3px;
+    left: -1px;
+    margin-right: 10px;
+}
+
+.account-item {
+    display: block;
+    width: 140px;
+    height: 42px;
+    line-height: 42px;
+    color: #303133;
+}
+
+.account-item:hover {
+    color: #67C23A;
+    background-color: #F2F6FC;
+}
+
+.account-item:active {
+    color: #5DAF34;
+}
+
+.account-logout {
+    cursor: pointer;
+    border-top: 1px solid #DCDFE6;
+}
+
+/* Footer部分CSS */
+.footer {
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid #DCDFE6;
+    background-color: #E4E7ED;
+}
+
+/* Main部分CSS */
+main.container, main > .container {
+    min-height: 600px;
+    margin-bottom: 80px;
+}
+
+.title {
+    text-align: center;
+    margin: 32px;
+}
+
+.title-text {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.title-note {
+    color: #909399;
+}
+
+.title-note a {
+    color: #303133;
+    text-decoration-line: underline;
+}
+
+/* Button部分CSS */
+.btn {
+    width: 96px;
+    height: 36px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn .icon {
+    margin-right: 6px;
+}
+
+.btn-default {
+    color: #303133;
+    border: 1px solid #DCDFE6;
+    background-color: transparent;
+}
+
+.btn-default:hover {
+    color: #67C23A;
+    border: 1px solid #67C23A;
+}
+
+.btn-default:active {
+    color: #5DAF34;
+    border: 1px solid #5DAF34;
+}
+
+.btn-default:disabled {
+    color: #909399;
+    cursor: not-allowed;
+    border-color: #EBEEF5;
+}
+
+.btn-primary {
+    color: #67C23A;
+    border: 1px solid #67C23A;
+    background-color: transparent;
+}
+
+.btn-primary:hover {
+    color: #85CE61;
+    border: 1px solid #85CE61;
+}
+
+.btn-primary:active {
+    color: #5DAF34;
+    border: 1px solid #5DAF34;
+}
+
+.btn-primary:disabled {
+    color: #B3E19D;
+    cursor: not-allowed;
+    border: 1px solid #B3E19D;
+}
+
+.btn-petite {
+    width: 60px;
+    height: 32px;
+}
+
+.btn-super {
+    width: 100%;
+}
+
+/* Form部分CSS */
+.form-group {
+    margin-bottom: 8px;
+}
+
+.form-label {
+    height: 42px;
+    line-height: 42px;
+    font-weight: 700;
+}
+
+.form-control {
+    height: 42px;
+    line-height: 42px;
+    color: #303133;
+    font-size: 15px;
+    padding: 0 12px;
+    border: 1px solid #DCDFE6;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #67C23A;
+}
+
+select.form-control {
+    padding: 0 4px 0 8px;
+}
+
+textarea.form-control {
+    min-height: 144px;
+    max-height: 204px;
+    line-height: 20px;
+    padding: 12px;
+    font-size: 14px;
+    font-family: Arial, serif;
+}
+
+.form {
+    display: block;
+}
+
+.form .form-label {
+    display: block;
+}
+
+.form .form-control {
+    display: block;
+    width: 100%;
+}
+
+.form textarea.form-control {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.form-horizontal {
+    display: block;
+}
+
+.form-horizontal .form-group {
+    overflow: hidden;
+}
+
+.form-horizontal .form-label, .form-horizontal .form-control {
+    float: left;
+}
+
+.form-inline {
+    display: block;
+}
+
+.form-inline .form-group {
+    position: relative;
+}
+
+.form-inline .form-control {
+    width: 100%;
+    padding: 0 42px;
+}
+
+.form-inline .form-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    color: #909399;
+    text-align: center;
+}
+
+.form-inline .form-label .icon {
+    top: 4px;
+    left: 2px;
+    font-size: 18px;
+}
+
+.form-inline .form-action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    color: #909399;
+    text-align: center;
+}
+
+.form-inline .form-action .icon {
+    cursor: pointer;
+}
+
+.form-inline .form-control:focus + .form-label {
+    color: #67C23A;
+}
+
+.radio {
+    display: block;
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #DCDFE6;
+    border: 1px solid #DCDFE6;
+    background-clip: content-box;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + .radio {
+    background-color: #67C23A;
+}
+
+.checkbox {
+    display: block;
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+    box-sizing: border-box;
+    border: 1px solid #DCDFE6;
+    background-color: #DCDFE6;
+    background-clip: content-box;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .checkbox {
+    background-color: #67C23A;
+}
+
+/* Modal部分CSS */
+.modal {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-dialog {
+    width: 450px;
+    margin: 120px auto;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    padding: 16px;
+    border-bottom: 1px solid #DCDFE6;
+}
+
+.modal-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 17px;
+    text-align: center;
+}
+
+.modal-dismiss {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal-content {
+    overflow: hidden;
+    padding: 40px;
+}
+
+.modal-footer {
+    overflow: hidden;
+    padding: 16px;
+    border-top: 1px solid #DCDFE6;
+}
+
+.modal-footer > .btn-primary:disabled {
+    width: 96px;
+}
+
+.modal-footer > .pull-right {
+    margin-left: 14px;
+}
+
+/* Rotate部分CSS */
+.rotate {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+    -webkit-animation: rotate 2s linear infinite;
+    -moz-animation: rotate 2s linear infinite;
+    -o-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-moz-keyframes rotate {
+    from {
+        -moz-transform: rotate(0deg)
+    }
+    to {
+        -moz-transform: rotate(359deg)
+    }
+}
+
+@-o-keyframes rotate {
+    from {
+        -o-transform: rotate(0deg)
+    }
+    to {
+        -o-transform: rotate(359deg)
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(359deg)
+    }
+}
+
+/* Icon部分CSS */
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.icon {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    font-family: 'Glyphicons Halflings', serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-envelope:before {
+    content: "\2709";
+}
+
+.icon-search:before {
+    content: "\e003";
+}
+
+.icon-user:before {
+    content: "\e008";
+}
+
+.icon-th:before {
+    content: "\e011";
+}
+
+.icon-remove:before {
+    content: "\e014";
+}
+
+.icon-off:before {
+    content: "\e017";
+}
+
+.icon-cog:before {
+    content: "\e019";
+}
+
+.icon-lock:before {
+    content: "\e033";
+}
+
+.icon-bookmark:before {
+    content: "\e044";
+}
+
+.icon-remove-sign:before {
+    content: "\e083";
+}
+
+.icon-eye-open:before {
+    content: "\e105";
+}
+
+.icon-link:before {
+    content: "\e144";
+}
+
+.icon-phone:before {
+    content: "\e145";
+}
+
+.icon-menu-down:before {
+    content: "\e259";
+}
