@@ -84,7 +84,7 @@ a:link, a:hover, a:active, a:visited {
 
 button.login-action, button.login-action:hover, button.login-action:active {
     border: none;
-    margin-right: 12px;
+    margin-right: 16px;
 }
 
 .account {
@@ -141,13 +141,8 @@ button.login-action, button.login-action:hover, button.login-action:active {
     color: #303133;
 }
 
-.account-item:hover {
-    color: #67C23A;
+.account-item:hover, .account-item:active {
     background-color: #F2F6FC;
-}
-
-.account-item:active {
-    color: #5DAF34;
 }
 
 .account-logout {
@@ -294,7 +289,13 @@ textarea.form-control {
     line-height: 20px;
     padding: 12px;
     font-size: 14px;
-    font-family: Arial, serif;
+    font-family: "Arial", "Microsoft Yahei", "微软雅黑", "Hiragino Sans GB", "WenQuanYi Micro Hei", "宋体", "sans-serif";
+}
+
+input[type="file"].form-control {
+    font-size: 14px;
+    line-height: normal;
+    padding: 8px 12px;
 }
 
 .form {
@@ -316,15 +317,14 @@ textarea.form-control {
 }
 
 .form-horizontal {
-    display: block;
+    display: flex;
+    flex-flow: column;
 }
 
 .form-horizontal .form-group {
-    overflow: hidden;
-}
-
-.form-horizontal .form-label, .form-horizontal .form-control {
-    float: left;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .form-inline {
@@ -415,6 +415,18 @@ input[type="checkbox"]:checked + .checkbox {
     background-color: #67C23A;
 }
 
+.form-horizontal-2 {
+
+}
+
+.form-horizontal-2 .form-label {
+    width: 30px;
+}
+
+.form-horizontal-2 .form-control {
+    width: 328px;
+}
+
 /* Modal部分CSS */
 .modal {
     position: fixed;
@@ -454,21 +466,26 @@ input[type="checkbox"]:checked + .checkbox {
 }
 
 .modal-content {
-    overflow: hidden;
     padding: 40px;
 }
 
+.modal-prompt {
+    font-size: 18px;
+    text-align: center;
+}
+
 .modal-footer {
-    overflow: hidden;
+    display: flex;
+    flex-flow: row-reverse;
     padding: 16px;
     border-top: 1px solid #DCDFE6;
 }
 
-.modal-footer > .btn-primary:disabled {
+.modal-footer > .btn-petite:disabled {
     width: 96px;
 }
 
-.modal-footer > .pull-right {
+.modal-footer > .btn {
     margin-left: 14px;
 }
 
@@ -478,10 +495,10 @@ input[type="checkbox"]:checked + .checkbox {
     -webkit-transition-duration: 1s;
     -moz-transition-property: -moz-transform;
     -moz-transition-duration: 1s;
-    -webkit-animation: rotate 2s linear infinite;
-    -moz-animation: rotate 2s linear infinite;
-    -o-animation: rotate 2s linear infinite;
-    animation: rotate 2s linear infinite;
+    -webkit-animation: rotate 1s linear infinite;
+    -moz-animation: rotate 1s linear infinite;
+    -o-animation: rotate 1s linear infinite;
+    animation: rotate 1s linear infinite;
 }
 
 @-webkit-keyframes rotate {
@@ -566,6 +583,10 @@ input[type="checkbox"]:checked + .checkbox {
 
 .icon-cog:before {
     content: "\e019";
+}
+
+.icon-refresh:before {
+    content: "\e031";
 }
 
 .icon-lock:before {

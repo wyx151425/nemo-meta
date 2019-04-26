@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/nemo-meta.iml" filepath="$PROJECT_DIR$/nemo-meta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/meta-ui.iml" filepath="$PROJECT_DIR$/meta-ui.iml" />
     </modules>
   </component>
 </project>

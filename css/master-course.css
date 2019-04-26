@@ -1,29 +1,35 @@
-.book {
+.master-course {
+    position: relative;
+    width: 100%;
+    height: 286px;
+    padding: 72px 0;
+    background-color: #E4E7ED;
+    box-shadow: inset 0 0 24px 12px rgba(0, 0, 0, 0.25);
+}
+
+.master-course .container {
     display: flex;
-    width: 1200px;
-    padding: 30px;
-    margin-bottom: 24px;
-    border-radius: 4px;
+    height: 286px;
     justify-content: space-between;
-    box-sizing: border-box;
-    background-color: #FFFFFF;
+}
+
+.course-cover {
+    display: block;
+    object-fit: cover;
+    width: 360px;
+    height: 270px;
+    border-radius: 4px;
+    border: 8px solid #FFFFFF;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.book-cover {
-    display: block;
-    width: 360px;
-    height: 270px;
-    object-fit: cover;
-    border-radius: 4px;
+.course-info {
+    width: 800px;
+    height: 286px;
 }
 
-.book-info {
-    width: 760px;
-    height: 270px;
-}
-
-.book-name {
+.course-name {
+    margin-top: 20px;
     font-size: 20px;
     line-height: 25px;
     font-weight: 700;
@@ -33,18 +39,18 @@
     white-space: nowrap;
 }
 
-.book-style {
+.course-label {
     margin: 12px 0;
     line-height: 20px;
 }
 
-.book-style .icon-bookmark {
+.course-label .icon-bookmark {
     top: 3px;
     color: #67C23A;
     margin-right: 8px;
 }
 
-.book-desc {
+.course-desc {
     height: 120px;
     line-height: 24px;
     margin-bottom: 16px;
@@ -54,4 +60,9 @@
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
+}
+
+.course-action {
+    display: flex;
+    flex-flow: row;
 }

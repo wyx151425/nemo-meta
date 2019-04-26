@@ -5,7 +5,7 @@
     <title>Meta - 多媒体教学平台</title>
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="../css/meta.css"/>
-    <link rel="stylesheet" href="../css/user-index.css"/>
+    <link rel="stylesheet" href="../css/meta-courses.css"/>
     <link rel="stylesheet" href="../css/course.css"/>
 </head>
 <body>
@@ -30,31 +30,45 @@
                     <span class="account-name">王振琦</span>
                     <span class="icon icon-menu-down"></span>
                 </div>
-                <!--<nav class="account-nav">-->
-                    <!--<a class="account-item" href=""><span class="icon icon-user"></span>我的漫画</a>-->
-                    <!--<a class="account-item" href=""><span class="icon icon-cog"></span>我的信息</a>-->
-                    <!--<p class="account-item account-logout"><span class="icon icon-off"></span>退出登录</p>-->
-                <!--</nav>-->
+                <nav class="account-nav">
+                    <a class="account-item" href="user-index.html"><span class="icon icon-user"></span>我的课程</a>
+                    <a class="account-item" href="user-settings.html"><span class="icon icon-cog"></span>我的信息</a>
+                    <p class="account-item account-logout"><span class="icon icon-off"></span>退出登录</p>
+                </nav>
             </section>
         </div>
     </div>
 </header>
 <main>
-    <section class="master-user">
-        <div class="container">
-            <img class="user-avatar" src="../images/default.png" alt=""/>
-            <section class="user-info">
-                <p class="user-name">王振琦</p>
-                <p class="user-profile">我是一个喜欢艺术热爱生活的小胖子 我的梦想是成为一名架构师 我是一个喜欢艺术热爱生活的小胖子 我的梦想是成为一名架构师 但是我还不怎么会编程 那就做一个艺术家吧 可是我漫画画的不好看 乐感也不好 还是不要做架构师了 架构师什么的都是秃头 也不要做艺术家了 艺术家什么的都是流氓 比流氓还流氓的是专家学者 我是一个喜欢艺术热爱生活的小胖子 我的梦想是成为一名架构师 但是我还不怎么会编程 那就做一个艺术家吧 可是我漫画画的不好看 乐感也不好 还是不要做架构师了 架构师什么的都是秃头 也不要做艺术家了 艺术家什么的都是流氓 比流氓还流氓的是专家学者</p>
-                <button class="btn btn-primary">创建课程</button>
-            </section>
+    <section class="master">
+        <img class="master-img" src="../images/theme.jpg" alt=""/>
+        <div class="master-info">
+            <div class="container">
+                <p class="master-title">课程展示</p>
+                <div class="master-group">
+                    <input class="master-control" type="text" placeholder="搜索您感兴趣的课程"/>
+                    <label class="master-action"><span class="icon icon-search"></span></label>
+                </div>
+            </div>
+        </div>
+        <div class="master-option">
+            <div class="container">
+                <ul class="master-list">
+                    <li class="master-item active">全部</li>
+                    <li class="master-item">语文</li>
+                    <li class="master-item">数学</li>
+                    <li class="master-item">英语</li>
+                    <li class="master-item">物理</li>
+                    <li class="master-item">化学</li>
+                    <li class="master-item">生物</li>
+                    <li class="master-item">政治</li>
+                    <li class="master-item">历史</li>
+                    <li class="master-item">地理</li>
+                </ul>
+            </div>
         </div>
     </section>
     <section class="container">
-        <div class="title">
-            <p class="title-text">我的课程</p>
-            <p class="title-note">我不仅长得好看&nbsp;而且还很幽默</p>
-        </div>
         <div class="course">
             <img class="course-cover" src="../images/theme.jpg" alt=""/>
             <section class="course-info">

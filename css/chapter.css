@@ -1,0 +1,147 @@
+.chapter-list {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.chapter {
+    width: 1000px;
+    padding: 60px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.chapter-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    white-space: nowrap;
+}
+
+.chapter-note {
+    color: #606266;
+    min-height: 24px;
+    max-height: 72px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    word-break: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.chapter-lesson {
+    border-bottom: 1px solid #DCDFE6;
+    margin-bottom: 20px;
+}
+
+.chapter-option {
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.chapter-edit {
+    position: relative;
+    margin-right: 14px;
+}
+
+.chapter-edit:hover > .chapter-manage {
+    display: block;
+}
+
+.chapter-manage {
+    display: none;
+    position: absolute;
+    top: -20px;
+    left: -17px;
+    width: 130px;
+    list-style: none;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.chapter-action {
+    width: 130px;
+    height: 42px;
+    cursor: pointer;
+    line-height: 42px;
+    border-bottom: 1px solid #DCDFE6;
+}
+
+.chapter-action:hover {
+    color: #67C23A;
+}
+
+.chapter-action:active {
+    color: #5DAF34;
+}
+
+.chapter-action .icon {
+    margin-right: 8px;
+}
+
+.lesson-list {
+    list-style: none;
+}
+
+.lesson {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    cursor: pointer;
+    border-top: 1px solid #DCDFE6;
+}
+
+.lesson-name {
+    height: 54px;
+    line-height: 54px;
+}
+
+.lesson-name .icon-play-circle {
+    font-size: 18px;
+    margin: 0 8px;
+}
+
+.lesson-action {
+    height: 54px;
+    line-height: 54px;
+}
+
+.lesson-action .icon {
+    margin-right: 12px;
+}
+
+.icon-film:before {
+    content: "\e009";
+}
+
+.icon-trash:before {
+    content: "\e020";
+}
+
+.icon-file:before {
+    content: "\e022";
+}
+
+.icon-play-circle:before {
+    content: "\e029";
+}
+
+.icon-edit:before {
+    content: "\e065";
+}
+
+.icon-tasks:before {
+    content: "\e137";
+}
