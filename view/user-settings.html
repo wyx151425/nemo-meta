@@ -8,58 +8,45 @@
     <link rel="stylesheet" href="../css/user-settings.css"/>
 </head>
 <body>
-<header class="header">
-    <div class="header-fixed" style="display: none">
-        <div class="container">
-            <h1 class="app-name"><a href="meta-index.html">Meta</a></h1>
-            <section class="header-action">
-                <button class="btn btn-petite btn-default login-action">登录</button>
-                <a href="user-register.html">
-                    <button class="btn btn-petite btn-primary">注册</button>
-                </a>
-            </section>
-        </div>
-    </div>
-    <div class="header-fixed">
-        <div class="container">
-            <h1 class="app-name"><a href="meta-index.html">Meta</a></h1>
-            <section class="account">
-                <div class="account-info">
-                    <img class="account-avatar" src="../images/default.png" alt=""/>
-                    <span class="account-name">王振琦</span>
-                    <span class="icon icon-menu-down"></span>
-                </div>
-                <nav class="account-nav">
-                    <a class="account-item" href=""><span class="icon icon-user"></span>我的课程</a>
-                    <a class="account-item" href=""><span class="icon icon-cog"></span>我的信息</a>
-                    <p class="account-item account-logout"><span class="icon icon-off"></span>退出登录</p>
-                </nav>
-            </section>
-        </div>
-    </div>
-</header>
-<main class="container">
+<meta-header id="header"></meta-header>
+<main id="userSettings" class="container">
     <div class="panel">
         <section class="master">
             <img class="user-avatar" src="../images/default.png" alt=""/>
             <p class="user-name">王振琦</p>
-            <div class="avatar-action">
-                <button class="btn btn-primary" type="button">修改头像</button>
+            <div class="user-action">
+                <input id="avatarFile" class="img-file" type="file" @change="analyzeAvatar"/>
+                <button class="btn btn-primary" type="button" @click="chooseAvatar" v-if="!isChosen">修改头像</button>
+                <div v-if="isChosen" v-cloak>
+                    <button class="btn btn-petite btn-primary" type="button" @click="saveAvatar" :disabled="isBtnDisabled">
+                        <span class="icon icon-refresh rotate" v-if="isBtnDisabled"></span>{{action}}
+                    </button>
+                    <button class="btn btn-petite btn-elegance" type="button" @click="cancelChoice"
+                            :disabled="isBtnDisabled">
+                        取消
+                    </button>
+                </div>
             </div>
             <ul class="option-list">
-                <li class="option active"><span class="icon icon-user"></span>个人简介</li>
-                <li class="option"><span class="icon icon-envelope"></span>邮箱</li>
-                <li class="option"><span class="icon icon-lock"></span>密码</li>
+                <li class="option" :class="{active: 0 == tabIndex}" @click="changeTab(0)">
+                    <span class="icon icon-user"></span>个人简介
+                </li>
+                <li class="option" :class="{active: 1 == tabIndex}" @click="changeTab(1)">
+                    <span class="icon icon-envelope"></span>邮箱
+                </li>
+                <li class="option" :class="{active: 2 == tabIndex}" @click="changeTab(2)">
+                    <span class="icon icon-lock"></span>密码
+                </li>
             </ul>
         </section>
-        <section class="option-item form">
+        <section class="option-item form" v-if="0 == tabIndex">
             <p class="option-title">个人简介</p>
             <div class="form-group">
                 <textarea class="form-control" placeholder="介绍一下自己吧..."></textarea>
             </div>
             <button class="btn btn-primary pull-right" type="button">保存</button>
         </section>
-        <section class="option-item form-inline">
+        <section class="option-item form-inline" v-if="1 == tabIndex" v-cloak>
             <p class="option-title">邮箱</p>
             <div class="form-group">
                 <label class="form-action"><span class="icon icon-remove-sign"></span></label>
@@ -73,7 +60,7 @@
             </div>
             <button class="btn btn-primary pull-right" type="button">保存</button>
         </section>
-        <section class="option-item form-inline">
+        <section class="option-item form-inline" v-if="2 == tabIndex" v-cloak>
             <p class="option-title">密码</p>
             <div class="form-group">
                 <label class="form-action"><span class="icon icon-eye-open"></span></label>
@@ -94,8 +81,51 @@
         </section>
     </div>
 </main>
-<footer class="footer">
-    <span>ALL RIGHTS RESERVED FOR RUMOFUTURE</span>
-</footer>
+<meta-footer id="footer"></meta-footer>
+<meta-popover id="popover"></meta-popover>
+<div id="popoverModal" class="popover-modal" v-if="prompts.length > 0">
+    <meta-popover v-for="prompt in prompts" v-bind:key="prompt.id" v-bind:prompt="prompt"></meta-popover>
+</div>
+<script src="../js/vue.js"></script>
+<script src="../js/meta.js"></script>
+<script>
+    const userSettings = new Vue({
+        el: "#userSettings",
+        data: {
+            isChosen: false,
+            isBtnDisabled: false,
+            action: "保存",
+            tabIndex: 0
+        },
+        methods: {
+            changeTab: function (tabIndex) {
+                this.tabIndex = tabIndex;
+            },
+            chooseAvatar: function () {
+                document.querySelector("#avatarFile").click();
+            },
+            analyzeAvatar: function () {
+                let file = document.querySelector("#avatarFile").files[0];
+                if (file) {
+                    this.isChosen = true;
+                }
+            },
+            cancelChoice: function () {
+                this.isChosen = false;
+                document.querySelector("#avatarFile").value = "";
+            },
+            saveAvatar: function () {
+                this.saveStart();
+            },
+            saveStart: function () {
+                this.isBtnDisabled = true;
+                this.action = "正在保存";
+            },
+            saveCallback: function () {
+
+            }
+        }
+    });
+</script>
 </body>
 </html>

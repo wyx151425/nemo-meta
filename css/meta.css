@@ -48,6 +48,10 @@ a:link, a:hover, a:active, a:visited {
     float: right;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 /* Header部分CSS */
 .header {
     width: 100%;
@@ -118,7 +122,7 @@ button.login-action, button.login-action:hover, button.login-action:active {
 
 .account-nav {
     position: absolute;
-    top: 64px;
+    top: 65px;
     right: 0;
     width: 140px;
     text-align: center;
@@ -175,7 +179,7 @@ main.container, main > .container {
 .title-text {
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .title-note {
@@ -244,9 +248,26 @@ main.container, main > .container {
     border: 1px solid #B3E19D;
 }
 
+.btn-elegance {
+    color: #67C23A;
+    background-color: transparent;
+}
+
+.btn-elegance:hover {
+    color: #85CE61;
+}
+
+.btn-elegance:active {
+    color: #5DAF34;
+}
+
+.btn-elegance:disabled {
+    color: #B3E19D;
+}
+
 .btn-petite {
     width: 60px;
-    height: 32px;
+    height: 36px;
 }
 
 .btn-super {
@@ -352,7 +373,7 @@ input[type="file"].form-control {
 }
 
 .form-inline .form-label .icon {
-    top: 4px;
+    top: 3px;
     left: 2px;
     font-size: 18px;
 }
@@ -427,6 +448,10 @@ input[type="checkbox"]:checked + .checkbox {
     width: 328px;
 }
 
+input[type="file"].img-file {
+    display: none;
+}
+
 /* Modal部分CSS */
 .modal {
     position: fixed;
@@ -471,7 +496,6 @@ input[type="checkbox"]:checked + .checkbox {
 
 .modal-prompt {
     font-size: 18px;
-    text-align: center;
 }
 
 .modal-footer {
@@ -481,13 +505,84 @@ input[type="checkbox"]:checked + .checkbox {
     border-top: 1px solid #DCDFE6;
 }
 
-.modal-footer > .btn-petite:disabled {
+.modal-footer > .btn-primary:disabled {
     width: 96px;
 }
 
 .modal-footer > .btn {
     margin-left: 14px;
 }
+
+/* Response框 */
+.popover-modal {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 16px;
+    width: 270px;
+}
+
+.popover {
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 16px 0;
+    padding: 0 16px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.popover .icon {
+    padding-right: 4px;
+}
+
+.success {
+    background-color: #67c23a;
+}
+
+.info {
+    background-color: #409eff;
+}
+
+.warning {
+    background-color: #e6a23c;
+}
+
+.error {
+    background-color: #f56c6c;
+}
+
+.icon-plus-sign:before {
+    content: "\e081";
+}
+
+.icon-minus-sign:before {
+    content: "\e082";
+}
+
+.icon-remove-sign:before {
+    content: "\e083";
+}
+
+.icon-ok-sign:before {
+    content: "\e084";
+}
+
+.icon-question-sign:before {
+    content: "\e085";
+}
+
+.icon-info-sign:before {
+    content: "\e086";
+}
+
+.icon-exclamation-sign:before {
+    content: "\e101";
+}
+
 
 /* Rotate部分CSS */
 .rotate {

@@ -10,36 +10,7 @@
     <link rel="stylesheet" href="../css/chapter.css"/>
 </head>
 <body>
-<header class="header">
-    <div class="header-fixed" style="display: none">
-        <div class="container">
-            <h1 class="app-name"><a href="meta-index.html">Meta</a></h1>
-            <section class="header-action">
-                <button class="btn btn-petite btn-default login-action">登录</button>
-                <a href="user-register.html">
-                    <button class="btn btn-petite btn-primary">注册</button>
-                </a>
-            </section>
-        </div>
-    </div>
-    <div class="header-fixed">
-        <div class="container">
-            <h1 class="app-name"><a href="meta-index.html">Meta</a></h1>
-            <section class="account">
-                <div class="account-info">
-                    <img class="account-avatar" src="../images/default.png" alt=""/>
-                    <span class="account-name">王振琦</span>
-                    <span class="icon icon-menu-down"></span>
-                </div>
-                <nav class="account-nav">
-                    <a class="account-item" href="user-index.html"><span class="icon icon-user"></span>我的课程</a>
-                    <a class="account-item" href="user-settings.html"><span class="icon icon-cog"></span>我的信息</a>
-                    <p class="account-item account-logout"><span class="icon icon-off"></span>退出登录</p>
-                </nav>
-            </section>
-        </div>
-    </div>
-</header>
+<meta-header id="header"></meta-header>
 <main id="userCourse">
     <section class="master-course">
         <div class="container">
@@ -179,10 +150,8 @@
         </section>
     </section>
 </main>
-<footer class="footer">
-    <span>ALL RIGHTS RESERVED FOR RUMOFUTURE</span>
-</footer>
-<div id="addChapterModal" class="modal" v-if="isVisible">
+<meta-footer id="footer"></meta-footer>
+<div id="addChapterModal" class="modal" v-if="isVisible" v-cloak>
     <dialog class="modal-dialog">
         <header class="modal-header">
             <h1 class="modal-title">添加章节</h1>
@@ -202,13 +171,13 @@
         </main>
         <footer class="modal-footer">
             <button class="btn btn-petite btn-default" @click="invisible" :disabled="isBtnDisabled">取消</button>
-            <button class="btn btn-petite btn-primary" :disabled="isBtnDisabled">
+            <button class="btn btn-petite btn-primary" @click="saveChapter" :disabled="isBtnDisabled">
                 <span class="icon icon-refresh rotate" v-if="isBtnDisabled"></span>{{action}}
             </button>
         </footer>
     </dialog>
 </div>
-<div id="deleteChapterModal" class="modal" v-if="isVisible">
+<div id="deleteChapterModal" class="modal" v-if="isVisible" v-cloak>
     <dialog class="modal-dialog">
         <header class="modal-header">
             <h1 class="modal-title">删除课时</h1>
@@ -219,13 +188,13 @@
         </main>
         <footer class="modal-footer">
             <button class="btn btn-petite btn-default" @click="invisible" :disabled="isBtnDisabled">取消</button>
-            <button class="btn btn-petite btn-primary" :disabled="isBtnDisabled">
+            <button class="btn btn-petite btn-primary" @click="deleteChapter" :disabled="isBtnDisabled">
                 <span class="icon icon-refresh rotate" v-if="isBtnDisabled"></span>{{action}}
             </button>
         </footer>
     </dialog>
 </div>
-<div id="addLessonModal" class="modal" v-if="isVisible">
+<div id="addLessonModal" class="modal" v-if="isVisible" v-cloak>
     <dialog class="modal-dialog">
         <header class="modal-header">
             <h1 class="modal-title">添加课时</h1>
@@ -245,13 +214,13 @@
         </main>
         <footer class="modal-footer">
             <button class="btn btn-petite btn-default" @click="invisible" :disabled="isBtnDisabled">取消</button>
-            <button class="btn btn-petite btn-primary" :disabled="isBtnDisabled">
+            <button class="btn btn-petite btn-primary" @click="saveLesson" :disabled="isBtnDisabled">
                 <span class="icon icon-refresh rotate" v-if="isBtnDisabled"></span>{{action}}
             </button>
         </footer>
     </dialog>
 </div>
-<div id="updateLessonModal" class="modal" v-if="isVisible">
+<div id="updateLessonModal" class="modal" v-if="isVisible" v-cloak>
     <dialog class="modal-dialog">
         <header class="modal-header">
             <h1 class="modal-title">更新课时</h1>
@@ -271,13 +240,13 @@
         </main>
         <footer class="modal-footer">
             <button class="btn btn-petite btn-default" @click="invisible" :disabled="isBtnDisabled">取消</button>
-            <button class="btn btn-petite btn-primary" :disabled="isBtnDisabled">
+            <button class="btn btn-petite btn-primary" @click="updateLesson" :disabled="isBtnDisabled">
                 <span class="icon icon-refresh rotate" v-if="isBtnDisabled"></span>{{action}}
             </button>
         </footer>
     </dialog>
 </div>
-<div id="deleteLessonModal" class="modal" v-if="isVisible">
+<div id="deleteLessonModal" class="modal" v-if="isVisible" v-cloak>
     <dialog class="modal-dialog">
         <header class="modal-header">
             <h1 class="modal-title">删除课时</h1>
@@ -288,30 +257,28 @@
         </main>
         <footer class="modal-footer">
             <button class="btn btn-petite btn-default" @click="invisible" :disabled="isBtnDisabled">取消</button>
-            <button class="btn btn-petite btn-primary" :disabled="isBtnDisabled">
+            <button class="btn btn-petite btn-primary" @click="deleteLesson" :disabled="isBtnDisabled">
                 <span class="icon icon-refresh rotate" v-if="isBtnDisabled"></span>{{action}}
             </button>
         </footer>
     </dialog>
 </div>
-<div id="learnLessonModal" class="modal learn-modal" v-if="isVisible">
+<div id="learnLessonModal" class="modal learn-modal" v-if="isVisible" v-cloak>
     <dialog class="modal-dialog">
         <header class="modal-header">
-            <h1 class="modal-title">学习课时</h1>
+            <h1 class="modal-title">课程学习</h1>
             <div class="modal-dismiss"><span class="icon icon-remove" @click="invisible"></span></div>
         </header>
         <main class="modal-content">
-            <p class="modal-prompt">您确定要学习该课时吗?</p>
+            <video class="learn-lesson" src="../images/test.ogg" controls></video>
         </main>
         <footer class="modal-footer">
-            <button class="btn btn-petite btn-default" @click="invisible" :disabled="isBtnDisabled">取消</button>
-            <button class="btn btn-petite btn-primary" :disabled="isBtnDisabled">
-                <span class="icon icon-refresh rotate" v-if="isBtnDisabled"></span>{{action}}
-            </button>
+            <span>1-2 安装TypeScript</span>
+            <span>正在播放</span>
         </footer>
     </dialog>
 </div>
-<div id="addQuestionModal" class="modal" v-if="isVisible">
+<div id="addQuestionModal" class="modal" v-if="isVisible" v-cloak>
     <dialog class="modal-dialog">
         <header class="modal-header">
             <h1 class="modal-title">添加试题</h1>
@@ -331,13 +298,13 @@
         </main>
         <footer class="modal-footer">
             <button class="btn btn-petite btn-default" @click="invisible" :disabled="isBtnDisabled">取消</button>
-            <button class="btn btn-petite btn-primary" :disabled="isBtnDisabled">
+            <button class="btn btn-petite btn-primary" @click="saveQuestion" :disabled="isBtnDisabled">
                 <span class="icon icon-refresh rotate" v-if="isBtnDisabled"></span>{{action}}
             </button>
         </footer>
     </dialog>
 </div>
-<div id="uploadDataModal" class="modal" v-if="isVisible">
+<div id="uploadDataModal" class="modal" v-if="isVisible" v-cloak>
     <dialog class="modal-dialog">
         <header class="modal-header">
             <h1 class="modal-title">上传资料</h1>
@@ -350,20 +317,21 @@
                     <input class="form-control" type="text"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">视频</label>
+                    <label class="form-label">文件</label>
                     <input class="form-control" type="file"/>
                 </div>
             </form>
         </main>
         <footer class="modal-footer">
             <button class="btn btn-petite btn-default" @click="invisible" :disabled="isBtnDisabled">取消</button>
-            <button class="btn btn-petite btn-primary" :disabled="isBtnDisabled">
+            <button class="btn btn-petite btn-primary" @click="updateData" :disabled="isBtnDisabled">
                 <span class="icon icon-refresh rotate" v-if="isBtnDisabled"></span>{{action}}
             </button>
         </footer>
     </dialog>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="../js/vue.js"></script>
+<script src="../js/meta.js"></script>
 <script>
     const userCourse = new Vue({
         el: "#userCourse",
@@ -439,20 +407,20 @@
             action: "删除"
         },
         methods: {
-            visible: () => {
+            visible: function () {
                 this.isVisible = true;
             },
-            invisible: () => {
+            invisible: function () {
                 this.isVisible = false;
             },
-            deleteStart: () => {
+            deleteStart: function () {
                 this.isBtnDisabled = true;
                 this.action = "正在删除";
             },
-            deleteCallback: () => {
+            deleteCallback: function () {
 
             },
-            deleteChapter: () => {
+            deleteChapter: function () {
                 this.deleteStart();
             }
         }
@@ -466,20 +434,20 @@
             action: "保存"
         },
         methods: {
-            visible: () => {
+            visible: function () {
                 this.isVisible = true;
             },
-            invisible: () => {
+            invisible: function () {
                 this.isVisible = false;
             },
-            saveStart: () => {
+            saveStart: function () {
                 this.isBtnDisabled = true;
                 this.action = "正在保存";
             },
-            saveCallback: () => {
+            saveCallback: function () {
 
             },
-            saveLesson: () => {
+            saveLesson: function () {
                 this.saveStart();
             }
         }
@@ -493,20 +461,20 @@
             action: "更新"
         },
         methods: {
-            visible: () => {
+            visible: function () {
                 this.isVisible = true;
             },
-            invisible: () => {
+            invisible: function () {
                 this.isVisible = false;
             },
-            updateStart: () => {
+            updateStart: function () {
                 this.isBtnDisabled = true;
                 this.action = "正在更新";
             },
-            updateCallback: () => {
+            updateCallback: function () {
 
             },
-            updateLesson: () => {
+            updateLesson: function () {
                 this.updateStart();
             }
         }
@@ -520,21 +488,21 @@
             action: "删除"
         },
         methods: {
-            visible: () => {
+            visible: function () {
                 this.isVisible = true;
             },
-            invisible: () => {
+            invisible: function () {
                 this.isVisible = false;
             },
-            deleteStart: () => {
+            deleteStart: function () {
                 this.isBtnDisabled = true;
                 this.action = "正在删除";
             },
-            deleteCallback: () => {
+            deleteCallback: function () {
 
             },
-            deleteLesson: () => {
-
+            deleteLesson: function () {
+                this.deleteStart();
             }
         }
     });
@@ -547,17 +515,17 @@
             action: "学习"
         },
         methods: {
-            visible: () => {
+            visible: function () {
                 this.isVisible = true;
             },
-            invisible: () => {
+            invisible: function () {
                 this.isVisible = false;
             },
-            learnStart: () => {
+            learnStart: function () {
                 this.isBtnDisabled = true;
                 this.action = "正在学习";
             },
-            learnCallback: () => {
+            learnCallback: function () {
 
             }
         }
@@ -571,18 +539,21 @@
             action: "保存"
         },
         methods: {
-            visible: () => {
+            visible: function () {
                 this.isVisible = true;
             },
-            invisible: () => {
+            invisible: function () {
                 this.isVisible = false;
             },
-            saveStart: () => {
+            saveStart: function () {
                 this.isBtnDisabled = true;
                 this.action = "正在保存";
             },
-            saveCallback: () => {
+            saveCallback: function () {
 
+            },
+            saveQuestion: function () {
+                this.saveStart();
             }
         }
     });
@@ -595,20 +566,20 @@
             action: "上传"
         },
         methods: {
-            visible: () => {
+            visible: function () {
                 this.isVisible = true;
             },
-            invisible: () => {
+            invisible: function () {
                 this.isVisible = false;
             },
-            uploadStart: () => {
+            uploadStart: function () {
                 this.isBtnDisabled = true;
                 this.action = "正在上传";
             },
-            uploadCallback: () => {
+            uploadCallback: function () {
 
             },
-            uploadData: () => {
+            uploadData: function () {
                 this.uploadStart();
             }
         }

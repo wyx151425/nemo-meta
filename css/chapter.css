@@ -17,7 +17,7 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-word;
@@ -120,6 +120,37 @@
 
 .lesson-action .icon {
     margin-right: 12px;
+}
+
+.learn-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.learn-modal .modal-dialog {
+    display: block;
+    min-width: 800px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.learn-modal .modal-content {
+    padding: 0;
+}
+
+.learn-modal .modal-footer {
+    justify-content: space-between;
+    flex-flow: row;
+}
+
+.learn-lesson {
+    display: block;
+    max-width: 1200px;
+    min-width: 800px;
+    max-height: 720px;
+    outline: none;
 }
 
 .icon-film:before {
